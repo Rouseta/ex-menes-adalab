@@ -1,0 +1,74 @@
+.header {
+  background-color: lightpink;
+  position: fixed;
+  top: 0px;
+  height: 10vh;
+  width: 100%;
+  padding-top: 10px;
+  box-sizing: border-box;
+  border: palevioletred solid 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.title1 {
+  color: palevioletred;
+  font-weight: 300;
+}
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: skyblue;
+  border-radius: 50px;
+  border: rgb(101, 183, 231) groove;
+  transform: translatey(-10px);
+}
+.ball2 {
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50px;
+  transform: translatey(10px -18px);
+}
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(200px);
+  box-sizing: content-box;
+}
+.title2 {
+  padding: 20px;
+}
+.title3 {
+  padding: 20px;
+}
+.sentence {
+  padding-bottom: 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  background-color: lightpink;
+  width: 100%;
+  color: palevioletred;
+  border-top: solid 3px palevioletred;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.icon {
+  width: 60px;
+  height: 40px;
+  background-color: lightpink;
+  color: palevioletred;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(150px);
+  border: solid 3px palevioletred;
+}

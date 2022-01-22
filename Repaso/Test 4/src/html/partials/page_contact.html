@@ -1,0 +1,94 @@
+<section class="formulario">
+  <fieldset>
+    <legend class="personal">Datos personales</legend>
+    <form class="caja" action="/signup" method="post">
+      <label for="nombre">Nombre</label>
+      <input
+        id="firstName"
+        placeholder="Escribe aquí tu nombre de pila..."
+        type="text"
+        name="firstName"
+        id="nombre"
+      />
+      <label for="apellidos">Apellido</label>
+      <input
+        placeholder="Escribe aquí tu apellido"
+        id="lastName"
+        type="text"
+        name="lastName"
+        id="apellidos"
+      />
+      <label for="dirección">Dirección</label>
+      <input
+        placeholder="Escribe aquí tu dirección"
+        id="dirección"
+        type="text"
+        name="firstName"
+      />
+      <label for="teléfono">Teléfono</label>
+      <input
+        placeholder="Escribe aquí tu teléfono"
+        id="teléfono"
+        type="tel"
+        name="phone"
+      />
+      <label for="correo">Correo electrónico</label>
+      <input
+        placeholder="Escribe aquí tu correo electrónico"
+        id="correo"
+        type="email"
+        name="email"
+      />
+    </form>
+  </fieldset>
+  <!--Aquí empieza otro campo-->
+  <fieldset>
+    <legend class="adition">Géneros favoritos</legend>
+    <form class="caja" action="/signup" method="get">
+      <div>
+        <label for="terror">
+          <input
+            id="terror"
+            type="checkbox"
+            value="choosemeal"
+            name="includeMeal"
+          />
+          Terror
+        </label>
+      </div>
+      <div>
+        <label for="comedy">
+          <input
+            id="comedy"
+            type="checkbox"
+            value="beverage"
+            name="includeDrink"
+          />
+          Comedia
+        </label>
+      </div>
+      <div>
+        <label for="adventures">
+          <input
+            id="adventures"
+            type="checkbox"
+            value="chooseDinner"
+            name="IncludeDinne"
+          />
+          Aventuras
+        </label>
+      </div>
+      <div class="fantasy">
+        <label for="fantasy">
+          <input
+            id="fantasy"
+            type="checkbox"
+            value="chooseDinner"
+            name="IncludeDinne"
+          />
+          Fantasía
+        </label>
+      </div>
+    </form>
+  </fieldset>
+</section>

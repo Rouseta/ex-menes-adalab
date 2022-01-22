@@ -1,0 +1,26 @@
+.footer {
+  position: fixed;
+
+  bottom: 0px;
+  width: 100%;
+  height: 10vh;
+  background-color: lightgoldenrodyellow;
+}
+.section--footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 33px 33px 33px;
+}
+
+.menu-footer__list {
+  list-style: none;
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.rosa {
+  grid-column: 2;
+  grid-row: 2;
+}
