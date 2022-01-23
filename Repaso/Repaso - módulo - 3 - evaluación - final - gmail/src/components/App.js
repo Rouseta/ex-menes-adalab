@@ -11,6 +11,23 @@ const App = () => {
   const [searchEmails, SetSearchEmails] = useState("");
 
   //Después tengo que hacer un maps para recorrer el array y pintar los resultados
+  const handleSearchEmails = (event) => {
+    SetSearchEmails(event.currentTarget.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+  };
+
+  const handleDeleteEmails = (event) => {
+    const deletedEmail = parseInt(event.currentTarget.id);
+    const findIndex = emails.findIndex((deleted) => deleted.id === (deletedEmail))
+    emails.splice(findIndex, 1);
+    SetEmails([...emails])
+    // SetEmails('');
+  }
+
+
 
   const filteredEmails = emails.filter((oneEmail) => {
 
@@ -36,7 +53,7 @@ const App = () => {
             </a>
           </td>
           <td className="text-align-right">
-            <button className="form__btn fas fa-trash"></button>
+            <button id={oneEmail.id} className="form__btn fas fa-trash" onClick={handleDeleteEmails} >Borrar</button>
           </td>
         </tr>
       );
@@ -64,7 +81,7 @@ const App = () => {
             </a>
           </td>
           <td className="text-align-right">
-            <button className="form__btn fas fa-trash"></button>
+            <button id={oneEmail.id} className="form__btn fas fa-trash" onClick={handleDeleteEmails}>Borrar</button>
           </td>
         </tr>
       );
@@ -80,28 +97,11 @@ const App = () => {
 
   });
 
-  //Ahora tengo que crear las funciones para buscar un email.
-
-  const handleSearchEmails = (event) => {
-    SetSearchEmails(event.currentTarget.value);
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
-  //Ahora quiero borrar un email
-
-  const handleDeleteEmails = (event) => {
-    const deletedEmail = parseInt(event.currentTarget.id);
-
-    const findIndex = emails.findIndex((deleted) => deleted.id === (deletedEmail.id))
-    emails.splice(findIndex, 1);
-    SetEmails([...emails])
 
 
 
 
-  }
+
 
 
   return (
@@ -133,9 +133,11 @@ const App = () => {
       </header>
 
       <table className="table">
-        <tbody>{renderEmails}
+        <tbody>
+          {renderEmails}
 
         </tbody>
+
       </table>
 
       <div>
