@@ -9,6 +9,7 @@ const App = () => {
 
   //Necesito una nueva variable de estado para la búsqueda de los emails
   const [searchEmails, SetSearchEmails] = useState("");
+  const [trashEmails, setTrashEmails] = useState([])
 
   //Después tengo que hacer un maps para recorrer el array y pintar los resultados
   const handleSearchEmails = (event) => {
@@ -20,11 +21,43 @@ const App = () => {
   };
 
   const handleDeleteEmails = (event) => {
-    const deletedEmail = parseInt(event.currentTarget.id);
-    const findIndex = emails.findIndex((deleted) => deleted.id === (deletedEmail))
+    const deletedEmail = (event.currentTarget.id);
+    const findIndex = emails.findIndex((deleted) => deleted.id === parseInt(deletedEmail))
     emails.splice(findIndex, 1);
     SetEmails([...emails])
     // SetEmails('');
+    setTrashEmails([...deletedEmail]);
+    console.log(trashEmails)
+
+
+  }
+
+  const handleRenderTrashEmails = () => {
+
+    const rendertrashEmails = trashEmails.map((oneTrashEmail) => {
+      <tr key={oneTrashEmail.id} className="cursor-pointer">
+        <td>
+          <a href="#" className="text--decoration--none">
+            {oneTrashEmail.fromName}
+          </a>
+        </td>
+        <td>
+          <a href="#" className="text--decoration--none">
+            {oneTrashEmail.subject}
+          </a>
+        </td>
+        <td>
+          <a href="#" className="text--decoration--none">
+            {oneTrashEmail.date}
+          </a>
+        </td>
+
+      </tr>
+
+      return
+    })
+
+
   }
 
 
@@ -119,7 +152,7 @@ const App = () => {
             <span className="fas fa-inbox"></span>
             Recibidos
           </button>
-          <button className="form__btn" >
+          <button className="form__btn" onClick={handleRenderTrashEmails} >
             <span className="fas fa-trash"></span>
             Papelera
           </button>
@@ -135,6 +168,7 @@ const App = () => {
       <table className="table">
         <tbody>
           {renderEmails}
+          {/* {rendertrashEmails} */}
 
         </tbody>
 
